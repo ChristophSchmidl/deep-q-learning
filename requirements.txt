@@ -1,0 +1,10 @@
+torch
+torchvision
+numpy
+matplotlib
+gym
+gym[atari, accept-rom-license]
+swig # for building box2d-py
+box2d-py # 2D physics library Box2D 2.3 for usage in Python., 2D rigid body simulation library for games.
+atari-py
+opencv-python
