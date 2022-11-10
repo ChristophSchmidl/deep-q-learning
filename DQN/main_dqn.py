@@ -1,9 +1,20 @@
 import numpy as np
+import torch
 from dqn_agent import DQNAgent
 from utils import plot_learning_curve, make_env
 
 
 if __name__ == '__main__':
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('Using device:', device)
+    #Additional Info when using cuda
+    if device.type == 'cuda':
+        print(torch.cuda.get_device_name(0))
+        print('Memory Usage:')
+        print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
+        print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
+
+
     env = make_env('PongNoFrameskip-v4')
     best_score = -np.inf
     load_checkpoint = False
@@ -54,4 +65,6 @@ if __name__ == '__main__':
 
         epsilon_history.append(agent.epsilon)
     
+    # TODO: figure_file is not working if the dir does not exist
+    # TODO: Save the steps_array, scores, epsilon_history in numpy arrays and save the arrays
     plot_learning_curve(steps_array, scores, epsilon_history, figure_file)

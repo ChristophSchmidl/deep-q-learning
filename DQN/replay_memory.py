@@ -19,7 +19,7 @@ class ReplayBuffer():
         self.action_memory = np.zeros(self.mem_size, dtype=np.int64)
         self.reward_memory = np.zeros(self.mem_size, dtype=np.float32)
         # Can be used for masking later on
-        self.terminal_memory = np.zeros(self.mem_size, dtype=np.uint8)
+        self.terminal_memory = np.zeros(self.mem_size, dtype=np.bool)
 
     def store_transition(self, state, action, reward, new_state, done):
         # Give me the position of the first un-occupied memory slot
