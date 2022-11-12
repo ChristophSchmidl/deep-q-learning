@@ -1,5 +1,5 @@
 # Deep Q-learning
-Based on the github repo "Deep-Q-Learning-Paper-To-Code" by Phil Tabor. However, this repo works with Python 3.9 and newer OpenAI gym environments where the ``step`` function returns a tuple of ``observation,reward,terminated,truncated,info`` and the ``reset`` function returns a tuple of ``observation,info``.
+Based on the github repo ["Deep-Q-Learning-Paper-To-Code"](https://github.com/philtabor/Deep-Q-Learning-Paper-To-Code) by Phil Tabor. However, this repo works with Python 3.9 and newer OpenAI gym environments where the ``step`` function returns a tuple of ``observation,reward,terminated,truncated,info`` and the ``reset`` function returns a tuple of ``observation,info``.
 
 ## Installation
 
